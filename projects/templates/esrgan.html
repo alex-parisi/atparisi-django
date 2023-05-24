@@ -1,0 +1,58 @@
+{% extends "project_detail.html" %}
+{% load static %}
+{% block project_content %}
+<div class="container-fluid justify-content-center">
+    <div class="row">
+        <div class="vr"></div>
+        <div class="col-md-4 p-3">
+            <h3><strong>Usage</strong></h3>
+            <br>
+            <p>First, install the package with pip:</p>
+            <div class="container-fluid text-white bg-primary-subtle border border-primary p-3 rounded">
+                pip install tfhub-esrgan-wrapper
+            </div>
+            <br>
+            <p>Then, import the package into your project:</p>
+            <div class="container-fluid text-white bg-primary-subtle border border-primary p-3 rounded">
+                from tfhub_esrgan_wrapper import ESGRAN
+            </div>
+            <br>
+            <p>Finally, evaluate the model:</p>
+            <div class="container-fluid text-white bg-primary-subtle border border-primary p-3 rounded">
+                esrgan = ESRGAN() <br>
+                esrgan.load_image("input.jpg") <br>
+                hishres_image = esrgan.evaluate()
+            </div>
+            <br>
+            <p>And save the super-resolution output:</p>
+            <div class="container-fluid text-white bg-primary-subtle border border-primary p-3 rounded">
+                from tfhub_esrgan_wrapper import save_image <br>
+                save_image(highres_image, "output.jpg")
+            </div>
+            <br>
+        </div>
+        <div class="vr"></div>
+        <div class="col-md-8 p-3">
+            <h3><strong>Results</strong></h3>
+            <br>
+            <p><h5><em>Full Size</em></h5></p>
+            <div class="row">
+                <div class="col">
+                    <em>Original</em>
+                    <br>
+                    <em>(1920 x 1080) 1080p</em>
+                    <br>
+                    <img class="border border-primary rounded mx-auto d-block img-fluid p-3 bg-primary-subtle" src="{% static 'img/esrgan_results_input_1.jpg' %}" alt="">
+                </div>
+                <div class="col">
+                    <em>Super-Resolution</em>
+                    <br>
+                    <em>(7680 x 4320) 4K</em>
+                    <br>
+                    <img class="border border-primary rounded mx-auto d-block img-fluid p-3 bg-primary-subtle" src="{% static 'img/esrgan_results_output_1.jpg' %}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
