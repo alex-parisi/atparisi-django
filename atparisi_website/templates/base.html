@@ -22,11 +22,11 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Home<span class="sr-only"></span></a>
+                        <a class="nav-link" href="{% url 'home' %}">Home<span class="sr-only"></span></a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Projects</a>
-                        <div class="dropdown-menu animate__animated animate__fadeIn" aria-labelledby="navbarDropdown">
+                        <div class="dropdown-menu animate__animated animate__bounceIn" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{% url 'project_index' %}">All Projects</a>
                             <div class="dropdown-divider"></div>
                             {% for project in projects %}
@@ -41,7 +41,14 @@
         <!-- Inserts webpage here -->
         {% endblock %}
         <div class="container-fluid bg-tertiary text-white">
-            FOOTER
+            <hr>
+            <h4>Get In Touch:</h4>
+            <p align="justify">Please feel free to email me if you have any questions, or any concerns about this website.</p>
+            <div class="alert alert-primary" role="alert">
+                <i class="bi bi-envelope"></i>  <a href="mailto:alex@atparisi.com" class="alert-link">alex@atparisi.com</a>
+            </div>
+            <hr>
+            <p>Last Updated: 05/30/2023</p>
         </div>
     </body>
     <script src="{% static 'js/helper_functions.js' %}"></script>

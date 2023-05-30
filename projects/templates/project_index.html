@@ -8,7 +8,7 @@
         <div class="row align-items-start justify-content-center">
             {% for project in projects %}
             <div class="col-md-2">
-                <div class="card border-primary text-white bg-primary-subtle mb-2 animate__animated animate__fadeInUp" style="{{ project.card_delay }}">
+                <div class="card border-primary text-white bg-primary-subtle mb-2 animate__animated animate__fadeInUp noOverflow" style="{{ project.card_delay }}">
                     <img class="card-img-top" src="{% static project.image %}">
                     <div class="card-body">
                         <h5 class="card-title">{{ project.title }}</h5>

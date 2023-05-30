@@ -76,7 +76,7 @@
                 </div>
             </div>
             <br>
-            <p align="justify">The image labeled "Original" is the input to the ESRGAN model, and the image labeled "Super-Resolution" is the output from the model. Click them to view the full-size images.</p>
+            <p align="justify" class="shadow rounded p-3 bg-primary-subtle">The image labeled "Original" is the input to the ESRGAN model, and the image labeled "Super-Resolution" is the output from the model. Click them to view the full-size images.</p>
         </div>
         <div class="col-md-4">
             <h5>Zoom-in</h5>
@@ -108,7 +108,7 @@
                 </div>
             </div>
             <br>
-            <p align="justify">The images above are a zoom-in of some ripples on the water. The results can be very impressive.</p>
+            <p align="justify" class="shadow rounded p-3 bg-primary-subtle">The images above are a zoom-in of some ripples on the water. The results can be very impressive.</p>
         </div>
     </div>
 </div>
@@ -149,7 +149,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-6 shadow rounded p-3 bg-primary-subtle">
             <p align="justify">Although this image is an extreme example of JPEG compression, even artifacts that may be invisible to the naked eye (until closer inspection by zooming in on the image) can interfere with the ESRGAN model.</p>
             <p align="justify">While the ESRGAN model shows impressively results, it is not perfect. As shown to the left (me in highschool), if there are distortions or artifacts (like those typically present in JPEG compression), the ESRGAN model will only amplify those distortions. Because of this, it is imperative to work with images that contain as little distortions as possible.</p>
             <p align="justify">These distortions are typically a result of JPEG compression, which over time introduces more and more artifacts into an image. This is because JPEG compression is lossy, and not all of the original image information is preserved.</p>
@@ -166,13 +166,13 @@
     <h1 class="text-center">Stitching Distortions</h1>
     <hr class="p-2">
     <div class="row align-items-center justify-content-md-center gap-5">
-        <div class="col-lg-6" align="justify">
+        <div class="col-lg-6 shadow rounded p-3 bg-primary-subtle" align="justify">
             <p>Because the ESRGAN model was trained on images of size 128x128, I convert the input image into separate 128x128 tiles to process individually by the model. Because of this, the borders of each tile will not align with its neighbors. This introduces what I will be calling stitching distortion.</p>
             <p>The two images on the right show examples of stitching distortion occuring on the border of four 128x128 tiles. The stitching distortion, like the distortions introduced in JPEG compression, are typically not visible until closer inspection via zoom-in.</p>
             <p>Currently, I can think of two ways to minimize or even eliminate these distortions: </p>
-            <ol class="list-group list-group-numbered">
-                <li class="list-group-item bg-secondary border-secondary">Interpolate the regions near border intersections</li>
-                <li class="list-group-item bg-secondary border-secondary">Increase the tile size in all directions during model evaluation, but then truncate the image again back to 128x128. This should give the model some information about the edges.</li>
+            <ol class="list-group list-group-numbered bg-primary-subtle">
+                <li class="list-group-item bg-primary-subtle" style="border-width:0px">Interpolate the regions near border intersections</li>
+                <li class="list-group-item bg-primary-subtle" style="border-width:0px">Increase the tile size in all directions during model evaluation, but then truncate the image again back to 128x128. This should give the model some information about the edges.</li>
             </ol>
         </div>
         <div class="col-md-4">
@@ -217,7 +217,7 @@
         <div class="col-lg-7">
             <h4>Generator and Discriminator</h4>
             <br>
-            <p align="justify">The ESRGAN model is a modification of the SSResNet generator network pictured below. The "Basic Block" used in the SSResNet network is modified by removing all batch-normalization layers, and then combining the remaining convolution layers into multi-level residual and dense connections. </p>
+            <p align="justify" class="shadow rounded p-3 bg-primary-subtle">The ESRGAN model is a modification of the SSResNet generator network pictured below. The "Basic Block" used in the SSResNet network is modified by removing all batch-normalization layers, and then combining the remaining convolution layers into multi-level residual and dense connections. </p>
         </div>
     </div>
     <div class="row align-items-center justify-content-lg-center gap-5">
@@ -237,7 +237,7 @@
     <br>
     <div class="row align-items-center justify-content-lg-center gap-5">
         <div class="col-lg-7">
-            <p align="justify"> The image to the below shows a detail of the modified Basic Block, called the Residual-in-Residual Dense Block (RRDB). All of the Basic Blocks in the SSResNet are replaced with RRDB units. </p>
+            <p align="justify" class="shadow rounded p-3 bg-primary-subtle"> The image to the below shows a detail of the modified Basic Block, called the Residual-in-Residual Dense Block (RRDB). All of the Basic Blocks in the SSResNet are replaced with RRDB units. </p>
         </div>
     </div>
     <div class="row align-items-center justify-content-lg-center gap-5">
@@ -257,7 +257,7 @@
     <br>
     <div class="row align-items-center justify-content-lg-center gap-5">
         <div class="col-lg-7">
-            <p align="justify">The image below shows the network architecture for the discriminator - it follows the typical design standard for image classifiers and uses a variety of convolution and dense layers. </p>
+            <p align="justify" class="shadow rounded p-3 bg-primary-subtle">The image below shows the network architecture for the discriminator - it follows the typical design standard for image classifiers and uses a variety of convolution and dense layers. </p>
         </div>
     </div>
     <div class="row align-items-center justify-content-lg-center gap-5">
@@ -282,7 +282,7 @@
         <div class="col-lg-7">
             <h4>Tile Processing</h4>
             <br>
-            <p align="justify">Because the ESRGAN model is trained on images of size 128x128, any images larger than that are divided into tiles and processed individually. This process is what most likely is introducing the stitching distortion, so this method needs to be revisited.</p>
+            <p align="justify" class="shadow rounded p-3 bg-primary-subtle">Because the ESRGAN model is trained on images of size 128x128, any images larger than that are divided into tiles and processed individually. This process is what most likely is introducing the stitching distortion, so this method needs to be revisited.</p>
         </div>
     </div>
 </div>
@@ -295,11 +295,16 @@
     <h1 class="text-center">References</h1>
     <hr class="p-2">
     <div class="row align-items-center justify-content-md-center gap-5">
-        <div class="col-lg-6">
+        <div class="col-lg-6 shadow rounded p-3 bg-primary-subtle">
             <p><a href="https://arxiv.org/pdf/1809.00219.pdf" class="link-underline-primary">Xintao Wang, Ke Yu, Shixiang Wu, Jinjin Gu, Yihao Liu, Chao Dong, Chen Change Loy, Yu Qiao, Xiaoou Tang. ESRGAN: Enhanced Super-Resolution Generative Adversarial Networks. To appear in ECCV, 2018.</a></p>
             <p><a href="https://arxiv.org/abs/1609.04802" class="link-underline-primary">Christian Ledig, Lucas Theis, Ferenc Huszar, Jose Caballero, Andrew Cunningham, Alejandro Acosta, Andrew Aitken, Alykhan Tejani, Johannes Totz, Zehan Wang, Wenzhe Shi. Photo-Realistic Single Image Super-Resolution Using a Generative Adversarial Network. In CVPR, 2017.</a></p>
             <p><a href="https://www.tensorflow.org/hub/tutorials/image_enhancing" class="link-underline-primary">https://www.tensorflow.org/hub/tutorials/image_enhancing</a></p>
         </div>
+    </div>
+</div>
+<div id="asd" class="container-fluid bg-dark p-5 getZooped">
+    <div class="row align-items-start justify-content-md-center gap-5">
+
     </div>
 </div>
 {% endblock %}

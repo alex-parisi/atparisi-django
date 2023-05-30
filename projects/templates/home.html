@@ -1,0 +1,214 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block page_content %}
+<div class="container-fluid bg-secondary p-5">
+    <h1 id="name_banner_header" class="text-center animate__animated animate__fadeInDown">Alex Parisi - Software Engineer</h1>
+    <script>
+        var em = document.getElementById("name_banner_header");
+        em.addEventListener('animationend', () => {
+            em.classList.remove('animate__animated');
+            em.classList.remove('animate__fadeInDown');
+            em.classList.add('animate__animated');
+            em.classList.add('animate__pulse');
+            em.classList.add('animate__infinite');
+        });
+    </script>
+    <hr class="p-2 animate__animated animate__fadeInDown">
+    <div class="row align-items-center justify-content-md-center">
+        <div class="col-md-4 animate__animated animate__fadeIn">
+            <h2 id="thank_you_banner" align="center" class="animate__animated animate__zoomInDown" style="animation-duration:1000ms">Thank you for visiting my website!</h2>
+            <script>
+                var e = document.getElementById("thank_you_banner");
+                e.addEventListener('animationend', () => {
+                    e.classList.remove('animate__animated');
+                    e.classList.remove('animate__zoomInDown');
+                    e.classList.add('animate__animated');
+                    e.classList.add('animate__tada');
+                    e.style.animationDuration = "1500ms";
+                    e.addEventListener('animationend', () => {
+                        e.classList.remove('animate__animated');
+                        e.classList.remove('animate__tada');
+                    });
+                });
+            </script>
+            <br>
+            <p align="justify" class="shadow rounded p-3 bg-primary-subtle">You can either view my resume by clicking the button below, scroll down to learn more about me, or check out the Menu to learn about some other interesting topics I'm passionate about. You can also find links to my GitHub and LinkedIn below.</p>
+            <br>
+            <a id="resume_button" class="btn btn-primary me-3 shadow hoverZoom" onclick="click_animation(this)" href="{% static 'doc/resume.pdf' %}" role="button"><i class="bi bi-download"></i> Resume</a>
+            <a class="btn btn-primary me-3 shadow hoverZoom" onclick="click_animation(this)" href="https://www.linkedin.com/in/alextparisi/" role="button"><i class="bi bi-linkedin"></i> LinkedIn</a>
+            <a class="btn btn-primary me-3 shadow hoverZoom" onclick="click_animation(this)" href="https://github.com/alex-parisi" role="button"><i class="bi bi-github"></i> GitHub</a>
+        </div>
+        <div class="col-md-3 text-center">
+            <img class="img-fluid hoverZoom animate__animated animate__fadeIn shadow-lg rounded" src="{% static 'img/me.jpg' %}">
+        </div>
+    </div>
+</div>
+<div class="container-fluid text-center bg-dark py-5">
+    <div class="row justify-content-md-center column-gap-3">
+        <div class="col-md-auto text-primary py-3 ">
+            <a class="btn btn-primary me-3 shadow p-4 animate__animated animate__fadeIn shadow hoverZoom" style="animation-delay:0ms" href="#about_me" role="button">
+                <h5>About Me</h5>
+            </a>
+            <a class="btn btn-primary me-3 shadow p-4 animate__animated animate__fadeIn shadow hoverZoom" style="animation-delay:250ms" href="#skills" role="button">
+                <h5>Skills</h5>
+            </a>
+            <a class="btn btn-primary me-3 shadow p-4 animate__animated animate__fadeIn shadow hoverZoom" style="animation-delay:500ms" href="#experience" role="button">
+                <h5>Experience</h5>
+            </a>
+            <a class="btn btn-primary me-3 shadow p-4 animate__animated animate__fadeIn shadow hoverZoom" style="animation-delay:750ms" href="#project_highlights" role="button">
+                <h5>Project Highlights</h5>
+            </a>
+        </div>
+    </div>
+</div>
+<div id="about_me" class="container-fluid bg-secondary p-5 getZooped">
+    <h1 class="text-center">About Me</h1>
+    <hr class="p-2">
+    <div class="row align-items-center justify-content-md-center gap-5">
+        <div class="col-sm-2 bg-primary-subtle shadow rounded text-center">
+            <i class="bi bi-house-fill" style="font-size:4em"></i>
+            <p align="justify" class="p-3">I was born and raised in Hartsdale, NY, and currently reside in Jersey City, NJ.</p>
+        </div>
+        <div class="col-sm-2 bg-primary-subtle shadow rounded text-center">
+            <i class="bi bi-mortarboard-fill" style="font-size:4em"></i>
+            <p align="center" class="p-3">Georgia Tech - 2017 - M.S.<br>Manhattan College - 2016 - B.S.</p>
+        </div>
+        <div class="col-sm-4 bg-primary-subtle shadow rounded text-center">
+            <i class="bi bi-person-rolodex" style="font-size:4em"></i>
+            <p align="justify center" class="p-3">
+                <u>Mikucare:</u><br>DSP (Digital Signal Processing) Engineer (Mar. 2022 - Present)<br><br>
+                <u>Peraton Labs:</u><br>Electrical Engineer (Nov. 2019 - Mar. 2022)<br><br>
+                <u>Crestron Electronics</u><br>DSP (Digital Signal Processing) Engineer (Jan. 2018 - Nov. 2019)
+            </p>
+        </div>
+    </div>
+</div>
+<div class="container-fluid bg-dark py-5">
+    <div class="d-grid gap-2">
+        <a class="btn p-4" href="#" role="button"><h5><i class="bi bi-arrow-bar-up"></i></h5></a>
+    </div>
+</div>
+<div id="skills" class="container-fluid bg-secondary p-5 getZooped">
+    <h1 class="text-center">Skills</h1>
+    <hr class="p-2">
+    <div class="row align-items-center justify-content-md-center gap-5">
+        <div class="col-sm-2 bg-primary-subtle shadow rounded text-center">
+            <i class="bi bi-laptop" style="font-size:4em"></i><h4>Programming</h4>
+            <p align="center" class="p-3">C++<br>Python<br>MATLAB<br>JavaScript<br>HTML & CSS<br>Markdown<br>AWS<br>Git<br>SQL<br>Unix<br>Bash</p>
+        </div>
+        <div class="col-sm-2 bg-primary-subtle shadow rounded text-center">
+            <i class="bi bi-layout-text-window" style="font-size:4em"></i><h4>Software & Packages</h4>
+            <p align="center" class="p-3">Tensorflow/Keras<br>PyTorch<br>numpy<br>scipy<br>pandas<br>matplotlib<br>git<br>Latex</p>
+        </div>
+        <div class="col-sm-2 bg-primary-subtle shadow rounded text-center">
+            <i class="bi bi-layout-wtf" style="font-size:4em"></i><h4>General</h4>
+            <p align="center" class="p-3">Algorithm Design<br>Software Design<br>Firmware Integration<br>Statistic Analysis<br>Technical Documentation</p>
+        </div>
+    </div>
+</div>
+<div class="container-fluid bg-dark py-5">
+    <div class="d-grid gap-2">
+        <a class="btn p-4" href="#" role="button"><h5><i class="bi bi-arrow-bar-up"></i></h5></a>
+    </div>
+</div>
+<div id="experience" class="container-fluid bg-secondary p-5 getZooped">
+    <h1 class="text-center">Experience</h1>
+    <hr class="p-2">
+    <div class="row align-items-center justify-content-md-center gap-5">
+        <div class="col-lg-6 bg-primary-subtle shadow rounded text-center">
+            <div class="row align-items-center">
+                <div class="col-md-5 p-5">
+                    <a href="https://mikucare.com/" target="_blank">
+                        <img class="img-fluid hoverZoom animate__animated animate__fadeIn shadow-lg rounded" src="{% static 'img/miku.jpg' %}">
+                    </a>
+                </div>
+                <div class="col-lg-7 p-5 text-start">
+                    <h4><u>Mikucare - DSP (Digital Signal Processing) Engineer</u></h4><br>
+                    <ol class="list-group-flush bg-primary-subtle">
+                        <li class="list-group-item py-2"><p align="justify">Member of a team of engineers responsible for developing and maintaining the device firmware of a smart baby monitor: scheduling releases, ensuring proper version control and documentation, and participating in code reviews</p></li>
+                        <li class="list-group-item py-2"><p align="justify">Completed an overhaul of the motion detection algorithm and improved the image features of the monitor’s camera ‑ tuning and simulation were done using Python and MATLAB, and the final algorithm was integrated into the production firmware in C++</p></li>
+                        <li class="list-group-item py-2"><p align="justify">Responsible for performing statistical analyses on large sets of data to ensure proper device function and algorithm deployment. Debugged customer issues and made adjustments to the motion detection algorithms and radar processing pipeline</p></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 bg-primary-subtle shadow rounded text-center">
+            <div class="row align-items-center">
+                <div class="col-md-5 p-5">
+                    <a href="https://www.peratonlabs.com/" target="_blank">
+                        <img class="img-fluid hoverZoom animate__animated animate__fadeIn shadow-lg rounded" src="{% static 'img/peraton.png' %}">
+                    </a>
+                </div>
+                <div class="col-lg-7 p-5 text-start">
+                    <h4><u>Peraton Labs - Electrical Engineer</u></h4><br>
+                    <ol class="list-group-flush bg-primary-subtle">
+                        <li class="list-group-item py-2"><p align="justify">Member of a team of engineers responsible for developing and maintaining the object tracking and trajectory estimation software for a Counter‑Unmanned‑Aircraft‑System (C‑UAS) program at the US Army CCDC‑AC: Weapons and Software Engineering Center</p></li>
+                        <li class="list-group-item py-2"><p align="justify">Participated in technical discussions, verified software pipelines, and analyzed ballistic radar trajectories and adaptive filter performance for C‑UAS programs and performed algorithmic analyses for a Kinetic‑Energy (KE) defeat project</p></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 bg-primary-subtle shadow rounded text-center">
+            <div class="row align-items-center">
+                <div class="col-md-5 p-5">
+                    <a href="https://www.crestron.com/" target="_blank">
+                        <img class="img-fluid hoverZoom animate__animated animate__fadeIn shadow-lg rounded" src="{% static 'img/crestron.jpg' %}">
+                    </a>
+                </div>
+                <div class="col-lg-7 p-5 text-start">
+                    <h4><u>Crestron Electronics - DSP (Digital Signal Processing) Engineer</u></h4><br>
+                    <ol class="list-group-flush bg-primary-subtle">
+                        <li class="list-group-item py-2"><p align="justify"></p>Wrote and interacted with bare‑metal and Real‑Time‑Operating‑System (RTOS) firmware, specifically relating to audio processing algorithms like line/acoustic echo cancellation, delay‑and‑sum beamformers, and fixed/adaptive filter design</li>
+                        <li class="list-group-item py-2"><p align="justify"></p>Modeled algorithms and product design feasibility in MATLAB, and participated in the full cycle of product development for the UC‑SB1‑CAM soundbar, one of Crestron’s best‑selling products</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid bg-dark py-5">
+    <div class="d-grid gap-2">
+        <a class="btn p-4" href="#" role="button"><h5><i class="bi bi-arrow-bar-up"></i></h5></a>
+    </div>
+</div>
+<div id="project_highlights" class="container-fluid bg-secondary p-5 getZooped">
+    <h1 class="text-center">Project Highlights</h1>
+    <hr class="p-2">
+    <div class="row align-items-start justify-content-md-center gap-5">
+        <div class="col-md-2">
+            <div class="card border-primary text-white bg-primary-subtle mb-2 noOverflow shadow-lg">
+                <a href="{% url 'project_detail' 1 %}">
+                    <img class="card-img-top" src="{% static 'img/esrgan_banner.png' %}">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title">ESRGAN Super Resolution</h5><br>
+                    <p class="card-text">This project implements the Enhanced Super-Resolution Generative Adversarial Network, or ESRGAN, into an easy-to-use wrapper.<br><br>It allows the user to upscale images 4 times, and see a significant improvement in quality when compared to traditional methods.</p>
+                    <a href="{% url 'project_detail' 1 %}" class="btn btn-primary">Read More</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="card border-primary text-white bg-primary-subtle mb-2 noOverflow shadow-lg">
+                <a href="{% url 'project_detail' 2 %}">
+                    <img class="card-img-top" src="{% static 'img/style_transfer_banner.png' %}">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title">Advanced Style Transfer</h5><br>
+                    <p class="card-text">This project implements a style transfer model into an easy-to-use wrapper.<br><br>It allows the user to take the <u>style</u> of one image, and transfer it to another.</p>
+                    <a href="{% url 'project_detail' 2 %}" class="btn btn-primary">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid bg-dark py-5">
+    <div class="d-grid gap-2">
+        <a class="btn p-4" href="#" role="button"><h5><i class="bi bi-arrow-bar-up"></i></h5></a>
+    </div>
+</div>
+<div id="asd" class="container-fluid bg-dark p-5 getZooped">
+    <div class="row align-items-start justify-content-md-center gap-5">
+
+    </div>
+</div>
+{% endblock %}
