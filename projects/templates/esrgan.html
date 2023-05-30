@@ -1,58 +1,310 @@
 {% extends "project_detail.html" %}
 {% load static %}
 {% block project_content %}
-<div class="container-fluid justify-content-center">
-    <div class="row">
-        <div class="vr"></div>
-        <div class="col-md-4 p-3">
-            <h3><strong>Usage</strong></h3>
-            <br>
+<div id="usage" class="container-fluid bg-secondary p-5 getZooped">
+    <h1 class="text-center">Usage</h1>
+    <hr class="p-2">
+    <div class="row align-items-center justify-content-md-center gap-5">
+        <div class="col-lg-5">
             <p>First, install the package with pip:</p>
-            <div class="container-fluid text-white bg-primary-subtle border border-primary p-3 rounded">
+            <div class="container-fluid text-primary bg-primary-subtle p-3 rounded shadow" style="font-family:'Consolas'">
                 pip install tfhub-esrgan-wrapper
             </div>
             <br>
-            <p>Then, import the package into your project:</p>
-            <div class="container-fluid text-white bg-primary-subtle border border-primary p-3 rounded">
-                from tfhub_esrgan_wrapper import ESGRAN
+            <hr>
+            <p>Then, import the package:</p>
+            <div class="container-fluid text-primary bg-primary-subtle p-3 rounded shadow" style="font-family:'Consolas'">
+                from tfhub_esrgan_wrapper import ESRGAN
             </div>
             <br>
-            <p>Finally, evaluate the model:</p>
-            <div class="container-fluid text-white bg-primary-subtle border border-primary p-3 rounded">
+            <hr>
+            <p>To evaluate the model: </p>
+            <div class="container-fluid text-primary bg-primary-subtle p-3 rounded shadow" style="font-family:'Consolas'">
                 esrgan = ESRGAN() <br>
                 esrgan.load_image("input.jpg") <br>
-                hishres_image = esrgan.evaluate()
+                highres_image = esrgan.evaluate() <br>
             </div>
             <br>
-            <p>And save the super-resolution output:</p>
-            <div class="container-fluid text-white bg-primary-subtle border border-primary p-3 rounded">
+            <hr>
+            <p>And to save the super-resolution output:</p>
+            <div class="container-fluid text-primary bg-primary-subtle p-3 rounded shadow" style="font-family:'Consolas'">
                 from tfhub_esrgan_wrapper import save_image <br>
                 save_image(highres_image, "output.jpg")
             </div>
             <br>
         </div>
-        <div class="vr"></div>
-        <div class="col-md-8 p-3">
-            <h3><strong>Results</strong></h3>
-            <br>
-            <p><h5><em>Full Size</em></h5></p>
+    </div>
+</div>
+<div class="container-fluid bg-dark py-5">
+    <div class="d-grid gap-2">
+        <a class="btn p-4" href="#" role="button"><h5><i class="bi bi-arrow-bar-up"></i></h5></a>
+    </div>
+</div>
+<div id="results" class="container-fluid bg-secondary p-5 getZooped">
+    <h1 class="text-center">Results</h1>
+    <hr class="p-2">
+    <div class="row align-items-start justify-content-md-center gap-5">
+        <div class="col-md-4">
+            <h5>Full Size</h5>
+            <hr>
             <div class="row">
                 <div class="col">
-                    <em>Original</em>
-                    <br>
-                    <em>(1920 x 1080) 1080p</em>
-                    <br>
-                    <img class="border border-primary rounded mx-auto d-block img-fluid p-3 bg-primary-subtle" src="{% static 'img/esrgan_results_input_1.jpg' %}" alt="">
+                    <div class="card border-primary text-white bg-primary-subtle mb-2">
+                        <div class="noOverflow">
+                            <a href="{% static 'img/esrgan_results_input_1.jpg' %}" target="_blank">
+                                <img class="card-img-top hoverZoom" src="{% static 'img/esrgan_results_input_1.jpg' %}">
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title"><em>Original</em></h5>
+                            <p class="card-text"><em>(1920 x 1080) - 1080p</em></p>
+                        </div>
+                    </div>
                 </div>
                 <div class="col">
-                    <em>Super-Resolution</em>
-                    <br>
-                    <em>(7680 x 4320) 4K</em>
-                    <br>
-                    <img class="border border-primary rounded mx-auto d-block img-fluid p-3 bg-primary-subtle" src="{% static 'img/esrgan_results_output_1.jpg' %}" alt="">
+                    <div class="card border-primary text-white bg-primary-subtle mb-2">
+                        <div class="noOverflow">
+                            <a href="{% static 'img/esrgan_results_output_1.jpg' %}" target="_blank">
+                                <img class="card-img-top" src="{% static 'img/esrgan_results_output_1.jpg' %}">
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title"><em>Super-Resolution</em></h5>
+                            <p class="card-text"><em>(7680 x 4320) - 4K</em></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <p align="justify" class="shadow rounded p-3 bg-primary-subtle">The image labeled "Original" is the input to the ESRGAN model, and the image labeled "Super-Resolution" is the output from the model. Click them to view the full-size images.</p>
+        </div>
+        <div class="col-md-4">
+            <h5>Zoom-in</h5>
+            <hr>
+            <div class="row">
+                <div class="col">
+                    <div class="card border-primary text-white bg-primary-subtle mb-2">
+                        <div class="noOverflow">
+                            <a href="{% static 'img/esrgan_results_input_2.jpg' %}" target="_blank">
+                                <img class="card-img-top" src="{% static 'img/esrgan_results_input_2.jpg' %}">
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title"><em>Original</em></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card border-primary text-white bg-primary-subtle mb-2">
+                        <div class="noOverflow">
+                            <a href="{% static 'img/esrgan_results_output_2.jpg' %}" target="_blank">
+                                <img class="card-img-top" src="{% static 'img/esrgan_results_output_2.jpg' %}">
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title"><em>Super-Resolution</em></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <p align="justify" class="shadow rounded p-3 bg-primary-subtle">The images above are a zoom-in of some ripples on the water. The results can be very impressive.</p>
+        </div>
+    </div>
+</div>
+<div class="container-fluid bg-dark py-5">
+    <div class="d-grid gap-2">
+        <a class="btn p-4" href="#" role="button"><h5><i class="bi bi-arrow-bar-up"></i></h5></a>
+    </div>
+</div>
+<div id="jpeg-artifacts" class="container-fluid bg-secondary p-5 getZooped">
+    <h1 class="text-center">JPEG Artifacts</h1>
+    <hr class="p-2">
+    <div class="row align-items-center justify-content-md-center gap-5">
+        <div class="col-md-4">
+            <div class="row">
+                <div class="col">
+                    <div class="card border-primary text-white bg-primary-subtle mb-2">
+                        <div class="noOverflow">
+                            <a href="{% static 'img/little_me_input.jpg' %}" target="_blank">
+                                <img class="card-img-top" src="{% static 'img/little_me_input.jpg' %}">
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title"><em>Original</em></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card border-primary text-white bg-primary-subtle mb-2">
+                        <div class="noOverflow">
+                            <a href="{% static 'img/little_me_output.jpg' %}" target="_blank">
+                                <img class="card-img-top" src="{% static 'img/little_me_output.jpg' %}">
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title"><em>Super-Resolution</em></h5>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+        <div class="col-lg-6 shadow rounded p-3 bg-primary-subtle">
+            <p align="justify">Although this image is an extreme example of JPEG compression, even artifacts that may be invisible to the naked eye (until closer inspection by zooming in on the image) can interfere with the ESRGAN model.</p>
+            <p align="justify">While the ESRGAN model shows impressively results, it is not perfect. As shown to the left (me in highschool), if there are distortions or artifacts (like those typically present in JPEG compression), the ESRGAN model will only amplify those distortions. Because of this, it is imperative to work with images that contain as little distortions as possible.</p>
+            <p align="justify">These distortions are typically a result of JPEG compression, which over time introduces more and more artifacts into an image. This is because JPEG compression is lossy, and not all of the original image information is preserved.</p>
+            <p align="justify">Although the original picture was downloaded long ago, I can guess a couple of things: the original image was probably a screen shot of a sample displayed on a school photography website to avoid paying for it. After the original image was taken, it was probably compressed once for storage on the web-hosting service, and then is possibly compressed again when displayed on the webpage. When saving the screen shot as a JPEG, the image is compressed even further. All these layers of compression introduce significant distortions that the ESRGAN model only amplifies.</p>
+        </div>
+    </div>
+</div>
+<div class="container-fluid bg-dark py-5">
+    <div class="d-grid gap-2">
+        <a class="btn p-4" href="#" role="button"><h5><i class="bi bi-arrow-bar-up"></i></h5></a>
+    </div>
+</div>
+<div id="stitching-distortions" class="container-fluid bg-secondary p-5 getZooped">
+    <h1 class="text-center">Stitching Distortions</h1>
+    <hr class="p-2">
+    <div class="row align-items-center justify-content-md-center gap-5">
+        <div class="col-lg-6 shadow rounded p-3 bg-primary-subtle" align="justify">
+            <p>Because the ESRGAN model was trained on images of size 128x128, I convert the input image into separate 128x128 tiles to process individually by the model. Because of this, the borders of each tile will not align with its neighbors. This introduces what I will be calling stitching distortion.</p>
+            <p>The two images on the right show examples of stitching distortion occuring on the border of four 128x128 tiles. The stitching distortion, like the distortions introduced in JPEG compression, are typically not visible until closer inspection via zoom-in.</p>
+            <p>Currently, I can think of two ways to minimize or even eliminate these distortions: </p>
+            <ol class="list-group list-group-numbered bg-primary-subtle">
+                <li class="list-group-item bg-primary-subtle" style="border-width:0px">Interpolate the regions near border intersections</li>
+                <li class="list-group-item bg-primary-subtle" style="border-width:0px">Increase the tile size in all directions during model evaluation, but then truncate the image again back to 128x128. This should give the model some information about the edges.</li>
+            </ol>
+        </div>
+        <div class="col-md-4">
+            <div class="row">
+                <div class="col">
+                    <div class="card border-primary text-white bg-primary-subtle mb-2">
+                        <div class="noOverflow">
+                            <a href="{% static 'img/esrgan_stitching_1.png' %}" target="_blank">
+                                <img class="card-img-top" src="{% static 'img/esrgan_stitching_1.png' %}">
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title"><em>Example 1</em></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card border-primary text-white bg-primary-subtle mb-2">
+                        <div class="noOverflow">
+                            <a href="{% static 'img/esrgan_stitching_2.png' %}" target="_blank">
+                                <img class="card-img-top" src="{% static 'img/esrgan_stitching_2.png' %}">
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title"><em>Example 2</em></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid bg-dark py-5">
+    <div class="d-grid gap-2">
+        <a class="btn p-4" href="#" role="button"><h5><i class="bi bi-arrow-bar-up"></i></h5></a>
+    </div>
+</div>
+<div id="how-it-works" class="container-fluid bg-secondary p-5 getZooped">
+    <h1 class="text-center">How It Works</h1>
+    <hr class="p-2">
+    <div class="row align-items-center justify-content-lg-center gap-5">
+        <div class="col-lg-7">
+            <h4>Generator and Discriminator</h4>
+            <br>
+            <p align="justify" class="shadow rounded p-3 bg-primary-subtle">The ESRGAN model is a modification of the SSResNet generator network pictured below. The "Basic Block" used in the SSResNet network is modified by removing all batch-normalization layers, and then combining the remaining convolution layers into multi-level residual and dense connections. </p>
+        </div>
+    </div>
+    <div class="row align-items-center justify-content-lg-center gap-5">
+        <div class="col-lg-7">
+            <div class="card border-primary text-white bg-primary-subtle mb-2">
+                <div class="noOverflow">
+                    <a href="{% static 'img/ssresnet.png' %}" target="_blank">
+                        <img class="card-img-top" src="{% static 'img/ssresnet.png' %}">
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-text"><em>ESRGAN Model</em></h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row align-items-center justify-content-lg-center gap-5">
+        <div class="col-lg-7">
+            <p align="justify" class="shadow rounded p-3 bg-primary-subtle"> The image to the below shows a detail of the modified Basic Block, called the Residual-in-Residual Dense Block (RRDB). All of the Basic Blocks in the SSResNet are replaced with RRDB units. </p>
+        </div>
+    </div>
+    <div class="row align-items-center justify-content-lg-center gap-5">
+        <div class="col-lg-7">
+            <div class="card border-primary text-white bg-primary-subtle mb-2">
+                <div class="noOverflow">
+                    <a href="{% static 'img/rrdb.png' %}" target="_blank">
+                        <img class="card-img-top" src="{% static 'img/rrdb.png' %}">
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-text"><em>Residual-in-Residual Dense Block (RRDB)</em></h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row align-items-center justify-content-lg-center gap-5">
+        <div class="col-lg-7">
+            <p align="justify" class="shadow rounded p-3 bg-primary-subtle">The image below shows the network architecture for the discriminator - it follows the typical design standard for image classifiers and uses a variety of convolution and dense layers. </p>
+        </div>
+    </div>
+    <div class="row align-items-center justify-content-lg-center gap-5">
+        <div class="col-lg-7">
+            <div class="card border-primary text-white bg-primary-subtle mb-2">
+                <div class="noOverflow">
+                    <a href="{% static 'img/ssresnet_discriminator.png' %}" target="_blank">
+                        <img class="card-img-top" src="{% static 'img/ssresnet_discriminator.png' %}">
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-text"><em>Discriminator Architecture</em></h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="container">
+        <hr class="p-2">
+    </div>
+    <div class="row align-items-center justify-content-lg-center gap-5">
+        <div class="col-lg-7">
+            <h4>Tile Processing</h4>
+            <br>
+            <p align="justify" class="shadow rounded p-3 bg-primary-subtle">Because the ESRGAN model is trained on images of size 128x128, any images larger than that are divided into tiles and processed individually. This process is what most likely is introducing the stitching distortion, so this method needs to be revisited.</p>
+        </div>
+    </div>
+</div>
+<div class="container-fluid bg-dark py-5">
+    <div class="d-grid gap-2">
+        <a class="btn p-4" href="#" role="button"><h5><i class="bi bi-arrow-bar-up"></i></h5></a>
+    </div>
+</div>
+<div id="references" class="container-fluid bg-secondary p-5 getZooped">
+    <h1 class="text-center">References</h1>
+    <hr class="p-2">
+    <div class="row align-items-center justify-content-md-center gap-5">
+        <div class="col-lg-6 shadow rounded p-3 bg-primary-subtle">
+            <p><a href="https://arxiv.org/pdf/1809.00219.pdf" class="link-underline-primary">Xintao Wang, Ke Yu, Shixiang Wu, Jinjin Gu, Yihao Liu, Chao Dong, Chen Change Loy, Yu Qiao, Xiaoou Tang. ESRGAN: Enhanced Super-Resolution Generative Adversarial Networks. To appear in ECCV, 2018.</a></p>
+            <p><a href="https://arxiv.org/abs/1609.04802" class="link-underline-primary">Christian Ledig, Lucas Theis, Ferenc Huszar, Jose Caballero, Andrew Cunningham, Alejandro Acosta, Andrew Aitken, Alykhan Tejani, Johannes Totz, Zehan Wang, Wenzhe Shi. Photo-Realistic Single Image Super-Resolution Using a Generative Adversarial Network. In CVPR, 2017.</a></p>
+            <p><a href="https://www.tensorflow.org/hub/tutorials/image_enhancing" class="link-underline-primary">https://www.tensorflow.org/hub/tutorials/image_enhancing</a></p>
+        </div>
+    </div>
+</div>
+<div id="asd" class="container-fluid bg-dark p-5 getZooped">
+    <div class="row align-items-start justify-content-md-center gap-5">
+
     </div>
 </div>
 {% endblock %}

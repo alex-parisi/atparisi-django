@@ -1,0 +1,232 @@
+{% extends "project_detail.html" %}
+{% load static %}
+{% block project_content %}
+<div id="results" class="container-fluid bg-secondary text-center p-5 getZooped">
+    <h1 class="text-center">Results</h1>
+    <hr class="p-2">
+    <div class="row align-items-center justify-content-md-center gap-5">
+        <div class="col-lg-5">
+            <div class="noOverflow">
+                <a href="{% static 'img/dcgan1.gif' %}" target="_blank">
+                    <img class="img-fluid rounded" src="{% static 'img/dcgan1.gif' %}">
+                </a>
+                <a href="{% static 'img/dcgan2.gif' %}" target="_blank">
+                    <img class="img-fluid rounded" src="{% static 'img/dcgan2.gif' %}">
+                </a>
+                <a href="{% static 'img/dcgan3.gif' %}" target="_blank">
+                    <img class="img-fluid rounded" src="{% static 'img/dcgan3.gif' %}">
+                </a>
+                <a href="{% static 'img/dcgan4.gif' %}" target="_blank">
+                    <img class="img-fluid rounded" src="{% static 'img/dcgan4.gif' %}">
+                </a>
+                <a href="{% static 'img/dcgan5.gif' %}" target="_blank">
+                    <img class="img-fluid rounded" src="{% static 'img/dcgan5.gif' %}">
+                </a>
+                <a href="{% static 'img/dcgan6.gif' %}" target="_blank">
+                    <img class="img-fluid rounded" src="{% static 'img/dcgan6.gif' %}">
+                </a>
+                <a href="{% static 'img/dcgan7.gif' %}" target="_blank">
+                    <img class="img-fluid rounded" src="{% static 'img/dcgan7.gif' %}">
+                </a>
+                <a href="{% static 'img/dcgan8.gif' %}" target="_blank">
+                    <img class="img-fluid rounded" src="{% static 'img/dcgan8.gif' %}">
+                </a>
+                <a href="{% static 'img/dcgan9.gif' %}" target="_blank">
+                    <img class="img-fluid rounded" src="{% static 'img/dcgan9.gif' %}">
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-7">
+            <p align="justify" class="shadow rounded p-3 bg-primary-subtle">The above GIFs show the network training over 100 epochs. Over time, the generator gets better at generating faces and the discriminator will get better at spotting fakes. Just taking a quick glance at the GIFs, it looks like the network begins to generate decent faces, and then quality begins to degrade - this is most likely due to overfitting and can possibly be mitigated by using a larger dataset.</p>
+        </div>
+        <div class="col-lg-5">
+            <div class="noOverflow">
+                <a href="{% static 'img/dcgan1_30.png' %}" target="_blank">
+                    <img class="img-fluid rounded" src="{% static 'img/dcgan1_30.png' %}">
+                </a>
+                <a href="{% static 'img/dcgan2_30.png' %}" target="_blank">
+                    <img class="img-fluid rounded" src="{% static 'img/dcgan2_30.png' %}">
+                </a>
+                <a href="{% static 'img/dcgan3_30.png' %}" target="_blank">
+                    <img class="img-fluid rounded" src="{% static 'img/dcgan3_30.png' %}">
+                </a>
+                <a href="{% static 'img/dcgan4_30.png' %}" target="_blank">
+                    <img class="img-fluid rounded" src="{% static 'img/dcgan4_30.png' %}">
+                </a>
+                <a href="{% static 'img/dcgan5_30.png' %}" target="_blank">
+                    <img class="img-fluid rounded" src="{% static 'img/dcgan5_30.png' %}">
+                </a>
+                <a href="{% static 'img/dcgan6_30.png' %}" target="_blank">
+                    <img class="img-fluid rounded" src="{% static 'img/dcgan6_30.png' %}">
+                </a>
+                <a href="{% static 'img/dcgan7_30.png' %}" target="_blank">
+                    <img class="img-fluid rounded" src="{% static 'img/dcgan7_30.png' %}">
+                </a>
+                <a href="{% static 'img/dcgan8_30.png' %}" target="_blank">
+                    <img class="img-fluid rounded" src="{% static 'img/dcgan8_30.png' %}">
+                </a>
+                <a href="{% static 'img/dcgan9_30.png' %}" target="_blank">
+                    <img class="img-fluid rounded" src="{% static 'img/dcgan9_30.png' %}">
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-7">
+            <p align="justify" class="shadow rounded p-3 bg-primary-subtle">The images above are a snapshot of the network after 30 epochs of training. The network has already learned how to generate and discriminate basic facial structure and can even work with objects on the face such as sunglasses.</p>
+        </div>
+        <div class="col-lg-5">
+            <div class="noOverflow">
+                <a href="{% static 'img/dcgan1_60.png' %}" target="_blank">
+                    <img class="img-fluid rounded" src="{% static 'img/dcgan1_60.png' %}">
+                </a>
+                <a href="{% static 'img/dcgan2_60.png' %}" target="_blank">
+                    <img class="img-fluid rounded" src="{% static 'img/dcgan2_60.png' %}">
+                </a>
+                <a href="{% static 'img/dcgan3_60.png' %}" target="_blank">
+                    <img class="img-fluid rounded" src="{% static 'img/dcgan3_60.png' %}">
+                </a>
+                <a href="{% static 'img/dcgan4_60.png' %}" target="_blank">
+                    <img class="img-fluid rounded" src="{% static 'img/dcgan4_60.png' %}">
+                </a>
+                <a href="{% static 'img/dcgan5_60.png' %}" target="_blank">
+                    <img class="img-fluid rounded" src="{% static 'img/dcgan5_60.png' %}">
+                </a>
+                <a href="{% static 'img/dcgan6_60.png' %}" target="_blank">
+                    <img class="img-fluid rounded" src="{% static 'img/dcgan6_60.png' %}">
+                </a>
+                <a href="{% static 'img/dcgan7_60.png' %}" target="_blank">
+                    <img class="img-fluid rounded" src="{% static 'img/dcgan7_60.png' %}">
+                </a>
+                <a href="{% static 'img/dcgan8_60.png' %}" target="_blank">
+                    <img class="img-fluid rounded" src="{% static 'img/dcgan8_60.png' %}">
+                </a>
+                <a href="{% static 'img/dcgan9_60.png' %}" target="_blank">
+                    <img class="img-fluid rounded" src="{% static 'img/dcgan9_60.png' %}">
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-7">
+            <p align="justify" class="shadow rounded p-3 bg-primary-subtle">The images above are a snapshot of the network after 60 epochs of training. While the network has gotten better at refining some facial detail, distortions are beginning to be introduced.</p>
+        </div>
+        <div class="col-lg-5">
+            <div class="noOverflow">
+                <a href="{% static 'img/dcgan1_90.png' %}" target="_blank">
+                    <img class="img-fluid rounded" src="{% static 'img/dcgan1_90.png' %}">
+                </a>
+                <a href="{% static 'img/dcgan2_90.png' %}" target="_blank">
+                    <img class="img-fluid rounded" src="{% static 'img/dcgan2_90.png' %}">
+                </a>
+                <a href="{% static 'img/dcgan3_90.png' %}" target="_blank">
+                    <img class="img-fluid rounded" src="{% static 'img/dcgan3_90.png' %}">
+                </a>
+                <a href="{% static 'img/dcgan4_90.png' %}" target="_blank">
+                    <img class="img-fluid rounded" src="{% static 'img/dcgan4_90.png' %}">
+                </a>
+                <a href="{% static 'img/dcgan5_90.png' %}" target="_blank">
+                    <img class="img-fluid rounded" src="{% static 'img/dcgan5_90.png' %}">
+                </a>
+                <a href="{% static 'img/dcgan6_90.png' %}" target="_blank">
+                    <img class="img-fluid rounded" src="{% static 'img/dcgan6_90.png' %}">
+                </a>
+                <a href="{% static 'img/dcgan7_90.png' %}" target="_blank">
+                    <img class="img-fluid rounded" src="{% static 'img/dcgan7_90.png' %}">
+                </a>
+                <a href="{% static 'img/dcgan8_90.png' %}" target="_blank">
+                    <img class="img-fluid rounded" src="{% static 'img/dcgan8_90.png' %}">
+                </a>
+                <a href="{% static 'img/dcgan9_90.png' %}" target="_blank">
+                    <img class="img-fluid rounded" src="{% static 'img/dcgan9_90.png' %}">
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-7">
+            <p align="justify" class="shadow rounded p-3 bg-primary-subtle">The images above are a snapshot of the network after 90 epochs of training. The distortions have become very apparent. </p>
+        </div>
+    </div>
+</div>
+<div class="container-fluid bg-dark py-5">
+    <div class="d-grid gap-2">
+        <a class="btn p-4" href="#" role="button"><h5><i class="bi bi-arrow-bar-up"></i></h5></a>
+    </div>
+</div>
+<div id="how-it-works" class="container-fluid bg-secondary p-5 getZooped">
+    <h1 class="text-center">How It Works</h1>
+    <hr class="p-2">
+    <div class="row align-items-center justify-content-lg-center gap-5">
+        <div class="col-lg-7">
+            <p align="justify" class="shadow rounded p-3 bg-primary-subtle">The image below shows the overall structure of the DCGAN. A random vector the length of the latent space is generated and used as an input to the generator network, which then generates a fake image. The fake image and an image from the dataset are used as inputs to the discriminator network, which determines which image is from the original dataset and which is the fake.</p>
+        </div>
+    </div>
+    <div class="row align-items-center justify-content-lg-center gap-5">
+        <div class="col-lg-4">
+            <div class="card border-primary text-white bg-primary-subtle mb-2">
+                <div class="noOverflow">
+                    <a href="{% static 'img/dcgan-model.jpg' %}" target="_blank">
+                        <img class="card-img-top" src="{% static 'img/dcgan-model.jpg' %}">
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-text"><em>DCGAN Model</em></h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row align-items-center justify-content-lg-center gap-5">
+        <div class="col-lg-7">
+            <p align="justify" class="shadow rounded p-3 bg-primary-subtle">The dataset is the celebA dataset commonly used in facial recognition and face generation. It contains over 200,000 eye-aligned images of celebrity faces. To simplify this project and allow for reasonable training and evaluation times, the images are downsized to 64x64 and the network width is based off that. In order to use Google Colab, I had to host the celebA dataset on a Google Cloud Storage bucket - it currently has public access so the linked notebook should have access to it. </p>
+            <hr>
+        </div>
+    </div>
+    <div class="row align-items-center justify-content-lg-center gap-5">
+        <div class="col-lg-3">
+            <div class="card border-primary text-white bg-primary-subtle mb-2">
+                <div class="noOverflow">
+                    <a href="{% static 'img/generator.PNG' %}" target="_blank">
+                        <img class="card-img-top" src="{% static 'img/generator.PNG' %}">
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-text"><em>The Generator</em></h5>
+                </div>
+            </div>
+            <p align="justify" class="shadow rounded p-3 bg-primary-subtle">As shown above, the generator takes an input vector of size 128 and uses a fully connected layer in conjunction with 4 convolution layers to upscale the latent space to the correct image size.</p>
+            <p align="justify" class="shadow rounded p-3 bg-primary-subtle">The ReLU functions all use an alpha of 0.2 and the convolution layers use a kernel size of 5 and a stride of 2. The number of filters used in the convolution layers are 512, 256, 128, and 3 respectively. The fourth and final convolution layer also uses a sigmoid activation function. </p>
+        </div>
+        <div class="col-lg-3">
+            <div class="card border-primary text-white bg-primary-subtle mb-2">
+                <div class="noOverflow">
+                    <a href="{% static 'img/discriminator.PNG' %}" target="_blank">
+                        <img class="card-img-top" src="{% static 'img/discriminator.PNG' %}">
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-text"><em>The Discriminator</em></h5>
+                </div>
+            </div>
+            <p align="justify" class="shadow rounded p-3 bg-primary-subtle">As shown above, the discriminator takes an input tensor of size (64, 64, 3) and uses 4 convolution filters in conjunction with a fully connected layer to extract features from the input and determine the probability that the input is real or fake.</p>
+            <p align="justify" class="shadow rounded p-3 bg-primary-subtle">The ReLU functions all use an alpha of 0.2 and the convolution layers use a kernel size of 5 and a stride of 2. The number of filters used in the convolution layers are 128, 256, 512, and 1024 respectively. The dropout layer uses a dropout rate of 20%, and the fully connected layer uses a sigmoid activation function.</p>
+        </div>
+    </div>
+</div>
+<div class="container-fluid bg-dark py-5">
+    <div class="d-grid gap-2">
+        <a class="btn p-4" href="#" role="button"><h5><i class="bi bi-arrow-bar-up"></i></h5></a>
+    </div>
+</div>
+<div id="references" class="container-fluid bg-secondary p-5 getZooped">
+    <h1 class="text-center">References</h1>
+    <hr class="p-2">
+    <div class="row align-items-center justify-content-md-center gap-5">
+        <div class="col-lg-6 shadow rounded p-3 bg-primary-subtle">
+            <p><a href="https://developers.google.com/machine-learning/gan/generator" class="link-underline-primary">https://developers.google.com/machine-learning/gan/generator</a></p>
+            <p><a href="https://www.tensorflow.org/tutorials/generative/dcgan" class="link-underline-primary">https://www.tensorflow.org/tutorials/generative/dcgan</a></p>
+            <p><a href="https://keras.io/examples/generative/dcgan_overriding_train_step/" class="link-underline-primary">https://keras.io/examples/generative/dcgan_overriding_train_step/</a></p>
+        </div>
+    </div>
+</div>
+<div id="asd" class="container-fluid bg-dark p-5 getZooped">
+    <div class="row align-items-start justify-content-md-center gap-5">
+
+    </div>
+</div>
+{% endblock %}
