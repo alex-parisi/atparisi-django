@@ -27,7 +27,7 @@ SECRET_KEY = "68$+$d0*rtf*&(1r(kdki9_27z(77_htxo$id$s5=qrw$o#7a!"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['www.atparisi.com', 'atparisi.com', 'atparisi.herokuapp.com']
 
 
 # Application definition
