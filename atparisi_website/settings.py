@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
-    #"django.contrib.staticfiles",
+    "django.contrib.staticfiles",
     "projects",
 ]
 
@@ -137,4 +137,4 @@ LOGGING = {
     },
 }
 
-django_on_heroku.settings(locals())
+django_on_heroku.settings(locals(), staticfiles=False)
