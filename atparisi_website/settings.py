@@ -160,4 +160,6 @@ LOGGING = {
     }
 }
 
+DEBUG_PROPAGATE_EXCEPTIONS = True
+
 django_on_heroku.settings(locals(), staticfiles=False)
