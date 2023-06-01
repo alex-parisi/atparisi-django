@@ -1,0 +1,44 @@
+{% extends "project_detail.html" %}
+{% load static %}
+{% block project_content %}
+<div id="results" class="container-fluid bg-secondary text-center p-5 getZooped">
+    <h1 class="text-center">Overview</h1>
+    <hr class="p-2">
+    <div class="row align-items-center justify-content-md-center gap-5">
+        <div class="col-md-4">
+            <div class="card border-primary text-white bg-primary-subtle mb-2">
+                <div class="noOverflow">
+                    <a href="{% static 'img/django_mvc.png' %}" target="_blank">
+                        <img class="card-img-top" src="{% static 'img/django_mvc.png' %}">
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"><em>Django's Model-View-Controller Pattern</em></h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 shadow rounded p-3 bg-primary-subtle">
+            <p align="justify">Django's web framework follows the Model-View-Controller (MVC) architectural pattern seen in the image to the left. Here is a high-level overview of how Django works:</p>
+            <ol class="list-group bg-primary-subtle">
+                <li class="list-group-item bg-primary-subtle" style="border-width:0px"><p align="justify"><strong>Models:</strong> Python classes that represent the data structures of the application. These models define the database schema and handle interactions with the database.</p></li>
+                <li class="list-group-item bg-primary-subtle" style="border-width:0px"><p align="justify"><strong>Views:</strong> handle the logic behind processing and responding to HTTP requests. A view receives an incoming request, performs necessary operations such as querying the database using models, and then returns an HTTP response.</p></li>
+                <li class="list-group-item bg-primary-subtle" style="border-width:0px"><p align="justify"><strong>Templates:</strong> are used to generate HTML dynamically.</p></li>
+                <li class="list-group-item bg-primary-subtle" style="border-width:0px"><p align="justify"><strong>URLS:</strong> are used to maps URLs to views. URL patterns are defined that specify URLs and their corresponding view functions.</p></li>
+                <li class="list-group-item bg-primary-subtle" style="border-width:0px"><p align="justify"><strong>Middleware:</strong> are the components that sit between the web server and Django's view processing.</p></li>
+            </ol>
+        </div>
+    </div>
+    <hr class="p-2">
+
+</div>
+<div class="container-fluid bg-dark py-5">
+    <div class="d-grid gap-2">
+        <a class="btn p-4" href="#" role="button"><h5><i class="bi bi-arrow-bar-up"></i></h5></a>
+    </div>
+</div>
+<div id="asd" class="container-fluid bg-dark p-5 getZooped">
+    <div class="row align-items-start justify-content-md-center gap-5">
+
+    </div>
+</div>
+{% endblock %}
