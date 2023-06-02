@@ -1,7 +1,7 @@
 {% extends "project_detail.html" %}
 {% load static %}
 {% block project_content %}
-<div id="results" class="container-fluid bg-secondary text-center p-5 getZooped">
+<div id="overview" class="container-fluid bg-secondary text-center p-5 getZooped">
     <h1 class="text-center">Overview</h1>
     <hr class="p-2">
     <div class="row align-items-center justify-content-md-center gap-5">
@@ -29,7 +29,53 @@
         </div>
     </div>
     <hr class="p-2">
-
+    <div class="row align-items-center justify-content-md-center gap-5">
+        <div class="col-lg-6 shadow rounded p-3 bg-primary-subtle">
+            <p align="justify">Django provides a high-level, Python-based framework that allows me to focus on building my web applications quickly and efficiently. It offers a wide range of built-in tools and libraries, simplifying common web development tasks and reducing the amount of code needed.</p>
+            <p align="justify">Django follows the Don't Repeat Yourself (DRY) principle, promoting code reusability. It provides a modular structure with reusable components called apps, which can be easily plugged into different projects. This modular approach helps in scaling applications as they grow and simplifies maintenance.</p>
+            <p align="justify"> There were many instances of copy-and-pasting code in between pages in my old static HTML website. For example, the Navbar at the top of the page can be imported into each page easily in Django, but requires it to be copy-and-pasted into every HTML file when using static pages. Also, any changes made to an application imported using Django easily cascades to all pages, avoiding having to make the same changes to all files individually.</p>
+        </div>
+        <div class="col-md-4">
+            <div class="card border-primary text-white bg-primary-subtle mb-2">
+                <div class="noOverflow">
+                    <a href="{% static 'img/django_mvc.png' %}" target="_blank">
+                        <img class="card-img-top" src="{% static 'img/django_mvc.png' %}">
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"><em>Django's Model-View-Controller Pattern</em></h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid bg-dark py-5">
+    <div class="d-grid gap-2">
+        <a class="btn p-4" href="#" role="button"><h5><i class="bi bi-arrow-bar-up"></i></h5></a>
+    </div>
+</div>
+<div id="templating" class="container-fluid bg-secondary text-center p-5 getZooped">
+    <h1 class="text-center">Templating</h1>
+    <hr class="p-2">
+    <div class="row align-items-center justify-content-md-center gap-5">
+        <div class="col-md-4">
+            <div class="card border-primary text-white bg-primary-subtle mb-2">
+                <div class="noOverflow">
+                    <a href="{% static 'img/templating.png' %}" target="_blank">
+                        <img class="card-img-top" src="{% static 'img/templating.png' %}">
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"><em>Templating Flow</em></h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 shadow rounded p-3 bg-primary-subtle">
+            <p align="justify">The general idea behind templating is to assemble an HTML webpage using different pieces, served by Django and populated with information from the database. For more simple requests like displaying a homepage, only some assembly is required.</p>
+            <p align="justify">The <u>base.html</u> file is attached to every HTML page and serves as a base for the website - applications like the Navbar and information like the footer are stored here, and easily imported into each individual HTML page.</p>
+            <p align="justify">The <u>&lt;project_name&gt;.html</u> file is attached to each project HTML page, and contains a more detailed breakdown of the project, installation of packages, and results.</p>
+        </div>
+    </div>
 </div>
 <div class="container-fluid bg-dark py-5">
     <div class="d-grid gap-2">
