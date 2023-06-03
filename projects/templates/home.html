@@ -177,6 +177,18 @@
     <div class="row align-items-start justify-content-md-center gap-5">
         <div class="col-md-2">
             <div class="card border-primary text-white bg-primary-subtle mb-2 noOverflow shadow-lg">
+                <a href="{% url 'project_detail' 4 %}">
+                    <img class="card-img-top" src="{% static 'img/django_banner.png' %}">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title">Django Website</h5><br>
+                    <p class="card-text">This project summarizes the work done to deploy this website using Django and Heroku, with information about each project stored in a database.</p>
+                    <a href="{% url 'project_detail' 4 %}" class="btn btn-primary">Read More</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="card border-primary text-white bg-primary-subtle mb-2 noOverflow shadow-lg">
                 <a href="{% url 'project_detail' 1 %}">
                     <img class="card-img-top" src="{% static 'img/esrgan_banner.png' %}">
                 </a>
