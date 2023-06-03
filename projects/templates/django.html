@@ -1,0 +1,250 @@
+{% extends "project_detail.html" %}
+{% load static %}
+{% block project_content %}
+<div id="overview" class="container-fluid bg-secondary text-center p-5 getZooped">
+    <h1 class="text-center">Overview</h1>
+    <hr class="p-2">
+    <div class="row align-items-center justify-content-md-center gap-5">
+        <div class="col-md-4">
+            <div class="card border-primary text-white bg-primary-subtle mb-2">
+                <div class="noOverflow">
+                    <a href="{% static 'img/django_mvc.png' %}" target="_blank">
+                        <img class="card-img-top" src="{% static 'img/django_mvc.png' %}">
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"><em>Django's Model-View-Controller Pattern</em></h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 shadow rounded p-3 bg-primary-subtle">
+            <p align="justify">Django's web framework follows the Model-View-Controller (MVC) architectural pattern seen in the image to the left. Here is a high-level overview of how Django works:</p>
+            <ol class="list-group bg-primary-subtle">
+                <li class="list-group-item bg-primary-subtle" style="border-width:0px"><p align="justify"><strong>Models:</strong> Python classes that represent the data structures of the application. These models define the database schema and handle interactions with the database.</p></li>
+                <li class="list-group-item bg-primary-subtle" style="border-width:0px"><p align="justify"><strong>Views:</strong> handle the logic behind processing and responding to HTTP requests. A view receives an incoming request, performs necessary operations such as querying the database using models, and then returns an HTTP response.</p></li>
+                <li class="list-group-item bg-primary-subtle" style="border-width:0px"><p align="justify"><strong>Templates:</strong> are used to generate HTML dynamically.</p></li>
+                <li class="list-group-item bg-primary-subtle" style="border-width:0px"><p align="justify"><strong>URLS:</strong> are used to maps URLs to views. URL patterns are defined that specify URLs and their corresponding view functions.</p></li>
+                <li class="list-group-item bg-primary-subtle" style="border-width:0px"><p align="justify"><strong>Middleware:</strong> are the components that sit between the web server and Django's view processing.</p></li>
+            </ol>
+        </div>
+    </div>
+    <hr class="p-2">
+    <div class="row align-items-center justify-content-md-center gap-5">
+        <div class="col-lg-6 shadow rounded p-3 bg-primary-subtle">
+            <p align="justify">Django provides a high-level, Python-based framework that allows me to focus on building my web applications quickly and efficiently. It offers a wide range of built-in tools and libraries, simplifying common web development tasks and reducing the amount of code needed.</p>
+            <p align="justify">Django follows the Don't Repeat Yourself (DRY) principle, promoting code reusability. It provides a modular structure with reusable components called apps, which can be easily plugged into different projects. This modular approach helps in scaling applications as they grow and simplifies maintenance.</p>
+            <p align="justify"> There were many instances of copy-and-pasting code in between pages in my old static HTML website. For example, the Navbar at the top of the page can be imported into each page easily in Django, but requires it to be copy-and-pasted into every HTML file when using static pages. Also, any changes made to an application imported using Django easily cascades to all pages, avoiding having to make the same changes to all files individually.</p>
+        </div>
+    </div>
+</div>
+<div class="container-fluid bg-dark py-5">
+    <div class="d-grid gap-2">
+        <a class="btn p-4" href="#" role="button"><h5><i class="bi bi-arrow-bar-up"></i></h5></a>
+    </div>
+</div>
+<div id="templating" class="container-fluid bg-secondary text-center p-5 getZooped">
+    <h1 class="text-center">Templating</h1>
+    <hr class="p-2">
+    <div class="row align-items-center justify-content-md-center gap-5">
+        <div class="col-md-4">
+            <div class="card border-primary text-white bg-primary-subtle mb-2">
+                <div class="noOverflow">
+                    <a href="{% static 'img/templating.png' %}" target="_blank">
+                        <img class="card-img-top" src="{% static 'img/templating.png' %}">
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"><em>Templating Flow</em></h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 shadow rounded p-3 bg-primary-subtle">
+            <p align="justify">The general idea behind templating is to assemble an HTML webpage using different pieces, served by Django and populated with information from the database. For more simple requests like displaying a homepage, only some assembly is required.</p>
+            <p align="justify">The <u>base.html</u> file is attached to every HTML page and serves as a base for the website - applications like the Navbar and information like the footer are stored here, and easily imported into each individual HTML page.</p>
+            <p align="justify">The <u>&lt;project_name&gt;.html</u> file is attached to each project HTML page, and contains a more detailed breakdown of the project, installation of packages, and results.</p>
+        </div>
+    </div>
+</div>
+<div class="container-fluid bg-dark py-5">
+    <div class="d-grid gap-2">
+        <a class="btn p-4" href="#" role="button"><h5><i class="bi bi-arrow-bar-up"></i></h5></a>
+    </div>
+</div>
+<div id="database-structure" class="container-fluid bg-secondary text-center p-5 getZooped">
+    <h1 class="text-center">Database Structure</h1>
+    <hr class="p-2">
+    <div class="row align-items-center justify-content-md-center gap-5">
+        <div class="col-lg-6 shadow rounded p-3 bg-primary-subtle">
+            <p align="justify">High-level information about each project is stored in a database, so that it may be individually displayed on a general all-purpose <u>Project Details</u> template page. Each project has the following entries:</p>
+            <ul class="list-group list-group-horizontal">
+                <li class="list-group-item">id</li>
+                <li class="list-group-item">title</li>
+                <li class="list-group-item">description</li>
+                <li class="list-group-item">technology</li>
+                <li class="list-group-item">image</li>
+                <li class="list-group-item">details</li>
+                <li class="list-group-item">link</li>
+                <li class="list-group-item">project_content</li>
+                <li class="list-group-item">tags</li>
+            </ul>
+            <br>
+            <p align="justify">The <u>title</u> and <u>description</u> fields are used to populate the cards shown on the <u>All Projects</u> page.</p>
+            <p align="justify">The <u>technology</u> field is not fully implemented yet, but will be tied into a search function for the project list.</p>
+            <p align="justify">The <u>image</u> field is the image displayed in the project card, as well as the main banner image on the project detail page.</p>
+            <p align="justify">The <u>details</u> field contains a short description of the project that is included at the top of each project detail page.</p>
+            <p align="justify">The <u>link</u> field contains a link to the GitHub page for this project.</p>
+            <p align="justify">The <u>project_content</u> field links to a separate HTML file that will ride along with the project detail page, contained a more detailed breakdown of how the project works and results.</p>
+            <p align="justify">Finally, the <u>tags</u> field contains the relevant pages that are contained in the <u>project_content</u> HTML file. This allows for the mini-navbar to be generated at the bottom of the project summary.</p>
+        </div>
+        <div class="col-md-4">
+            <div class="card border-primary text-white bg-primary-subtle mb-2">
+                <div class="noOverflow">
+                    <a href="{% static 'img/sqlite.jpg' %}" target="_blank">
+                        <img class="card-img-top" src="{% static 'img/sqlite.jpg' %}">
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-text"><em>Project Information is stored in a SQLite database.</em></h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid bg-dark py-5">
+    <div class="d-grid gap-2">
+        <a class="btn p-4" href="#" role="button"><h5><i class="bi bi-arrow-bar-up"></i></h5></a>
+    </div>
+</div>
+<div id="animations" class="container-fluid bg-secondary text-center p-5 getZooped">
+    <h1 class="text-center">Animations</h1>
+    <hr class="p-2">
+    <div class="row align-items-center justify-content-md-center gap-5">
+        <div class="col-md-4">
+            <div class="card border-primary text-white bg-primary-subtle mb-2">
+                <div class="noOverflow">
+                    <a href="https://animate.style/" target="_blank">
+                        <img class="card-img-top" src="{% static 'img/animate.png' %}">
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-text"><em>Most animations were implemented using <u>animate.css</u></em></h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 shadow rounded p-3 bg-primary-subtle">
+            <p align="justify">Using the <u>animate.css</u> library allowed for easy integration of clean animations for certain elements.</p>
+            <p align="justify">The entrances of the tags on each project details page is accomplished using the <i>fade</i> animation. A Django Model first determines the total number of tags that will be displayed, and then determines the delay between them. These delays are then provided to the View, which will apply the <i>fade-in</i> animation with its corresponding delay to each element, creating a nice cascade effect. A similar process is used to fade in the project cards on the <u>All Projects</u> page.</p>
+            <p align="justify">Buttons are animated by creating a JavaScript function that adds and removes the classes associated with the desired animation when the button is pressed.</p>
+            <p align="justify">Each large section in a project detail page will fade in and out as you scroll through the page. This is done by creating a JavaScript function that listens to every <i>scroll</i> event, checking to see which elements are within view, and then fading them in and out if so.</p>
+        </div>
+    </div>
+    <hr class="p-2">
+    <div class="row align-items-center justify-content-md-center gap-5">
+        <div class="col-lg-6 shadow rounded p-3 bg-primary-subtle">
+            <p align="justify">The only animations to not use the <u>animate.css</u> library are the <i>hover</i> animations, which are played when a user hover's their mouse over an image. This is done by creating a supplemental CSS file that modifies the <u>img</u> class, adding a transformation when the <i>hover</i> signal is triggered. For some cases, I wanted the image to be zoomable when hovering, but to not change the total size of the image. This is accomplished by creating another tag in the supplemental CSS file that prevents a <u>div</u> class from overflowing its content.</p>
+        </div>
+    </div>
+    <hr class="p-2">
+    <div class="row align-items-center justify-content-md-center gap-5">
+        <div class="col-lg-6 shadow rounded p-3 bg-primary-subtle">
+            <p align="justify">To view some example animations, click the buttons below!</p>
+            <a class="btn btn-primary me-3 shadow" onclick="click_animation(this)" role="button">Rubber Band</a>
+            <a class="btn btn-primary me-3 shadow" onclick="click_animation_bounce(this)" role="button">Bounce</a>
+            <a class="btn btn-primary me-3 shadow" onclick="click_animation_flash(this)" role="button">Flash</a>
+            <a class="btn btn-primary me-3 shadow" onclick="click_animation_swing(this)" role="button">Swing</a>
+            <a class="btn btn-primary me-3 shadow" onclick="click_animation_tada(this)" role="button">Ta-Da</a>
+            <a class="btn btn-primary me-3 shadow" onclick="click_animation_heartBeat(this)" role="button">Heartbeat</a>
+        </div>
+    </div>
+</div>
+<div class="container-fluid bg-dark py-5">
+    <div class="d-grid gap-2">
+        <a class="btn p-4" href="#" role="button"><h5><i class="bi bi-arrow-bar-up"></i></h5></a>
+    </div>
+</div>
+<div id="static-files" class="container-fluid bg-secondary text-center p-5 getZooped">
+    <h1 class="text-center">Static Files</h1>
+    <hr class="p-2">
+    <div class="row align-items-center justify-content-md-center gap-5">
+        <div class="col-lg-6 shadow rounded p-3 bg-primary-subtle">
+            <p align="justify">Typically, deploying a Django webpage into a live environment removes its ability serve static files, such as images. Instead of worrying about connecting to an EC2 instance and pulling the static files at runtime, I can instead use the <u>Whitenoise</u> middleware in Django. This allows me to still use static files, even when deployed, with the addition of only a few lines in my settings file.</p>
+        </div>
+        <div class="col-md-4">
+            <div class="card border-primary text-white bg-primary-subtle mb-2">
+                <div class="noOverflow">
+                    <a href="https://github.com/evansd/whitenoise" target="_blank">
+                        <img class="card-img-top" src="{% static 'img/whitenoise.png' %}">
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-text"><em>Static files are served using the <u>Whitenoise</u> middleware.</em></h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid bg-dark py-5">
+    <div class="d-grid gap-2">
+        <a class="btn p-4" href="#" role="button"><h5><i class="bi bi-arrow-bar-up"></i></h5></a>
+    </div>
+</div>
+<div id="deployment-and-hosting" class="container-fluid bg-secondary text-center p-5 getZooped">
+    <h1 class="text-center">Deployment and Hosting</h1>
+    <hr class="p-2">
+    <div class="row align-items-center justify-content-md-center gap-5">
+        <div class="col-md-4">
+            <div class="card border-primary text-white bg-primary-subtle mb-2">
+                <div class="noOverflow">
+                    <a href="https://www.heroku.com/" target="_blank">
+                        <img class="card-img-top" src="{% static 'img/heroku.png' %}">
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-text"><em>The Django project is deployed using <u>Heroku</u></em></h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 shadow rounded p-3 bg-primary-subtle">
+            <p align="justify">The Django project is deployed using Heroku, as it allows for quick and easy deployment of Django projects, has easy integration for linking it to a domain, and is well-known across the industry. It also provides an easy way to set up SSL certificates and manage DNS settings, or route them elsewhere.</p>
+            <p align="justify">For this project, I chose to use <u>CloudFlare</u> to manage my DNS settings, since Heroku and Google Domains don't play well with naked domain names (a naked domain is "atparisi.com", and not "www.atparisi.com") - Google Domains only allows A-records for naked domains, and Heroku will only allow ALIAS or ANAME records, which Google Domains does not offer. To use a naked domain properly in Heroku, we <i>must</i> use the ALIAS or ANAME configuration at the domain level, which unfortunately CloudFlare does not offer either; however, CloudFlare <i>does</i> offer a service called "CNAME Flattening", which allows for CNAME entries to be used at the domain level. This allows me to use a naked domain when deployed using Heroku and a Google Domain.</p>
+            <p align="justify">Google Domains allows me to use a custom name server easily. All three services can be used together to deploy a live website in minutes, with very little configuration required.</p>
+        </div>
+    </div>
+</div>
+<div class="container-fluid bg-dark py-5">
+    <div class="d-grid gap-2">
+        <a class="btn p-4" href="#" role="button"><h5><i class="bi bi-arrow-bar-up"></i></h5></a>
+    </div>
+</div>
+<div id="git-structure" class="container-fluid bg-secondary text-center p-5 getZooped">
+    <h1 class="text-center">Git Structure</h1>
+    <hr class="p-2">
+    <div class="row align-items-center justify-content-md-center gap-5">
+        <div class="col-lg-6 shadow rounded p-3 bg-primary-subtle">
+            <p align="justify">The Git structure for this project is relatively simple and only uses two branches: development and production. In addition to implementing new pages and features in the development branch, the development branch also has different Django settings so that it may be hosted locally - hosting the application through Heroku requires different configurations.</p>
+        </div>
+        <div class="col-md-4">
+            <div class="card border-primary text-white bg-primary-subtle mb-2">
+                <div class="noOverflow">
+                    <a href="https://github.com/alex-parisi/atparisi-django" target="_blank">
+                        <img class="card-img-top" src="{% static 'img/git.png' %}">
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-text"><em>Git Structure of Project: Production and Development Branches</em></h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid bg-dark py-5">
+    <div class="d-grid gap-2">
+        <a class="btn p-4" href="#" role="button"><h5><i class="bi bi-arrow-bar-up"></i></h5></a>
+    </div>
+</div>
+<div id="asd" class="container-fluid bg-dark p-5 getZooped">
+    <div class="row align-items-start justify-content-md-center gap-5">
+
+    </div>
+</div>
+{% endblock %}
