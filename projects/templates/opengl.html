@@ -65,34 +65,19 @@
     <h1 class="text-center">Structure</h1>
     <hr class="p-2">
     <div class="row align-items-center justify-content-md-center gap-5">
-        <div class="col-md-4 shadow rounded p-3 bg-primary-subtle">
-            <div class="container-fluid text-primary bg-primary-subtle p-3 rounded shadow" style="font-family:'Consolas'">
-                 engine ┰ camera
-                        ┃
-                        ┠ scene ┰ shaders ┰ lightingShader
-                        ┃       ┃         ┠ directionalShadowShader
-                        ┃       ┃         ┠ pointShadowShader
-                        ┃       ┃         ┖ skyboxShader
-                        ┃       ┃
-                        ┃       ┠ objects ┰ texture
-                        ┃       ┃         ┖ vertices
-                        ┃       ┃
-                        ┃       ┠ models ─ meshs ┰ diffuseTexture
-                        ┃       ┃                ┠ specularTexture
-                        ┃       ┃                ┠ normalTexture
-                        ┃       ┃                ┖ vertices
-                        ┃       ┃
-                        ┃       ┠ depthMaps ┰ directionalDepthMap
-                        ┃       ┃           ┖ pointDepthMap
-                        ┃       ┃
-                        ┃       ┖ lights ┰ directionalLight
-                        ┃                ┖ pointLights
-                        ┃
-                        ┖ inputs ┰ keyboard
-                                 ┖ mouse    
+        <div class="col-md-4">
+            <div class="card border-primary text-white bg-primary-subtle mb-2">
+                <div class="noOverflow">
+                    <a href="{% static 'img/opengl_structure.jpg' %}" target="_blank">
+                        <img class="card-img-top" src="{% static 'img/opengl_structure.jpg' %}">
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"><em>Engine Structure</em></h5>
+                </div>
             </div>
         </div>
-        <div class="col-md-4 shadow rounded p-3 bg-primary-subtle">
+        <div class="col-lg-6 shadow rounded p-3 bg-primary-subtle">
             <p align="justify">The engine handles the inputs from the keyboard and mouse, and therefore also handles the control of the camera. The camera and inputs are passed to the scene, which is rendered every frame. The scene contains a mixture of objects, models, and lights. In addition, there are various shaders attached to the scene that are used for different rendering conditions - like the generation of shadows.</p>
         </div>
     </div>
@@ -136,7 +121,7 @@
         <div class="col-lg-6 shadow rounded p-3 bg-primary-subtle">
             <p align="justify">Model loading is performed used <a href="http://assimp.org/">Assimp</a>, which allows for the importing of models in a multitude of formats.</p>
         </div>
-        <div class="col-md-4">
+        <div class="col-sm-2">
             <div class="card border-primary text-white bg-primary-subtle mb-2">
                 <div class="noOverflow">
                     <a href="http://assimp.org/" target="_blank">
@@ -160,7 +145,7 @@
     <hr class="p-2">
     <div class="row align-items-center justify-content-md-center gap-5">
         <div class="col-lg-6 shadow rounded p-3 bg-primary-subtle">
-            <p align="justify">Test text.</p>
+            <p align="justify"><a href="https://learnopengl.com/">https://learnopengl.com/</a></p>
         </div>
     </div>
 </div>
